@@ -19,7 +19,8 @@ int random_my(int min, int max)
 
 int f()
 {
-  const int N = 10;
+  const int N = 15
+;
   int* x = (int *)malloc(N * sizeof(int));
   int i;
   int mean = 0;
