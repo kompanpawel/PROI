@@ -15,7 +15,6 @@ struct Weapon
         {
 
         }
-int dmg();
 };
 
 struct Armor

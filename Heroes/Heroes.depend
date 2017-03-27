@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1490647144 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\main.cpp
+1490658509 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\main.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>
@@ -7,7 +7,7 @@
 1490652792 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\equipment.cpp
 	"Equipment.h"
 
-1490654292 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\equipment.h
+1490658509 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\equipment.h
 	<iostream>
 	<string>
 

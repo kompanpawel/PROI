@@ -24,14 +24,16 @@ public:
         {
 
         }
-    Monster(std::string name, int stamina, int attack, int defence, int damage, int armor, int modifier)
+    Monster(std::string name, int stamina, int attack, int defence, int damage, int armor)
     :
         name{name},
         stamina{stamina},
         currHP{stamina},
         attack{attack},
         defence{defence},
-        modifier{modifier}
+        damage{damage},
+        armor{armor},
+        modifier{0}
         {
 
         }

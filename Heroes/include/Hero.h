@@ -63,7 +63,7 @@ public:
     bool fight(Monster monster, bool state = false);
 
     void dmg(int dmg) {currHP -= dmg;}
-    void restore() {currHP = stamina;}
+    void restore(Monster monster);
     void levelUp();
 
     static void setDifficulty (double diff) {DIFFICULTY = diff;}
@@ -94,7 +94,7 @@ public:
     int getLevel() {return level;}
 
 private:
-    void weaponDmg();
+    int weaponDmg();
     void let_him_be()
     {
         strength = std::max(strength,1);
