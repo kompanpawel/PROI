@@ -1,13 +1,48 @@
 # depslib dependency file v1.0
-1490658509 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\main.cpp
+1490735102 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\main.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>
+	"menu.h"
 
 1490652792 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\equipment.cpp
 	"Equipment.h"
 
-1490658509 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\equipment.h
+1490735551 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\equipment.h
 	<iostream>
 	<string>
+
+1490735829 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\hero.cpp
+	<iostream>
+	<string>
+	<ctime>
+	<cstdlib>
+	"Hero.h"
+	"Equipment.h"
+
+1490735771 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\hero.h
+	<iostream>
+	<string>
+	"Equipment.h"
+	"Monster.h"
+
+1490734897 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\monster.h
+	<iostream>
+	<string>
+
+1490735666 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\menu.cpp
+	<iostream>
+	<string>
+	<sstream>
+	"Hero.h"
+	"menu.h"
+
+1490735164 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\menu.h
+	<iostream>
+	<string>
+	<windows.h>
+	"Hero.h"
+
+1490709191 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\monster.cpp
+	"Monster.h"
 

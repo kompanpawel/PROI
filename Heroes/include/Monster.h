@@ -1,6 +1,8 @@
 #ifndef MONSTER_H
 #define MONSTER_H
-#include "Hero.h"
+
+#include <iostream>
+#include <string>
 
 class Monster
 {
@@ -46,15 +48,15 @@ public:
     int getStamina() const {return stamina;}
     void setCurrHP(int currHP_) {currHP = currHP_;}
     int getCurrHP() const {return currHP;}
-    void setAttack(int attack_) {attack= std::max(attack_, 1);}
+    void setAttack(int attack_) {attack=attack_+ 2*modifier;}
     int getAttack() const {return attack;}
-    void setDefence(int defence_) {defence= std::max(defence_, 1);}
+    void setDefence(int defence_) {defence=defence_ + 2*modifier;}
     int getDefence() const {return defence;}
-    void setDamage(int damage_) {damage= std::max(damage_, 1);}
+    void setDamage(int damage_) {damage=damage_ + 1*modifier;}
     int getDamage() const {return damage;}
-    void setArmor(int armor_) {armor= std::max(armor_, 1);}
+    void setArmor(int armor_) {armor=armor_ + 1*modifier;}
     int getArmor() const {return armor;}
-    void setModifier(int modifier_) {modifier= std::max(modifier_, 1);}
+    void setModifier(int modifier_) {modifier=modifier_;}
     int getModifier() const {return modifier;}
     private:
 };

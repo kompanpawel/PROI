@@ -54,17 +54,20 @@ public:
         defence{defence}
         {
             let_him_be();
+            startingStats();
+            confAttack();
         }
     ~Hero()
         {
-          cout << name << "zginal walczac o spokoj w krainie nawiedzanej przez potwory";
+          cout << name << "died fighting with dark forces.";
         }
 
-    bool fight(Monster monster, bool state = false);
+    bool fight(Monster monster);
 
     void dmg(int dmg) {currHP -= dmg;}
-    void restore(Monster monster);
+    void restore();
     void levelUp();
+    void startingStats();
 
     static void setDifficulty (double diff) {DIFFICULTY = diff;}
 
@@ -84,14 +87,19 @@ public:
     int getCurrHP() const {return currHP;}
     void setWeapon(Weapon weapon_) {weapon = weapon_;}
     Weapon getWeapon() const {return weapon;}
+    int getWeaponDMG() {return weapon.base_damage;}
+    int getAccuracy() {return weapon.accuracy;}
     void setArmor (Armor armor_) {armor = armor_;}
-    Armor getArmor() {return armor;}
+    Armor getArmor() const {return armor;}
+    int getArmorValue() {return armor.base_armor;}
     void setAttack(int attack_) {attack = attack_;}
     int getAttack() const {return attack;}
     void confAttack();
     void setDefence();//int defence_) {defence= defence_;}
     int getDefence() const {return defence;}
-    int getLevel() {return level;}
+    int getLevel() const {return level;}
+
+
 
 private:
     int weaponDmg();
@@ -103,5 +111,7 @@ private:
         currHP = stamina = std::max(stamina, 1);
     }
 };
+
+ostream& operator<<( ostream& out, const Hero& g );
 
 #endif // HERO_H

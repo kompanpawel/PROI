@@ -7,11 +7,15 @@
 using namespace std;
 
 double Hero::DIFFICULTY = 1;
-ostream& operator<<( std::ostream& out, Hero *g )
+ostream& operator<<( ostream& out, const Hero& g )
 {
-    out << "name = " << g->getName() << "\nclass = " << g->getClass() << "\nstrength = " << g->getStrength() <<
-           "\nagility = " << g->getAgility() << "\nintelligence = " << g->getIntelligence() << "/nHP " << g->getCurrHP() <<"/"<<g->getStamina() <<
-           "\nweapon = (" << g->getWeapon() << ")\narmor = (" << g->getArmor() << ")" << "\nlevel = " << g->getLevel();
+    out << "name = " << g.getName() << "\nclass = " << g.getClass() << "\nstrength = " << g.getStrength() << "\nagility = " <<
+            g.getAgility() << "\nintelligence = " << g.getIntelligence() << "\nHP " << g.getCurrHP() <<"/"<<g.getStamina() <<
+           "\nweapon = (" << g.getWeapon() << ")\narmor = (" << g.getArmor() << ")" << "\nlevel = " << g.getLevel();
+
+    /*out << "name = " << g.getName(); << "\nclass = " << g.getClass() << "\nstrength = " << g.getStrength() << "\nnagility = " <<
+        g.getAgility() << "\nintelligence = " << g.getIntelligence() << "\nHP = " << g.getCurrHP() << "/" << g.getStamina() <<
+        "\nweapon = (" << g.getWeapon() << "\narmor = " << g.getArmor() << ")" << "\nlevel = " << g.getLevel();*/
     return out;
 }
 
@@ -46,28 +50,25 @@ int Hero::weaponDmg()
         int weapon_dmg = getWeapon().base_damage+ 0.4*getStrength();
         return weapon_dmg;
         }
-    if(getClass()=="Hunter")
+    else if(getClass()=="Hunter")
         {
         int weapon_dmg = getWeapon().base_damage+ 0.3*getAgility();
         return weapon_dmg;
         }
-    if(getClass()=="Sorcerer")
+    else if(getClass()=="Sorcerer")
         {
         int weapon_dmg = getWeapon().base_damage+ 0.5*getIntelligence();
         return weapon_dmg;
         }
 }
-bool Hero::fight(Monster monster, bool state)
+bool Hero::fight(Monster monster)
 {
 
     int init = rand()%2;
     //while(getCurrHP() > 0 && monster.getCurrHP() > 0)
     {
-        if(state)
-            {
                 cout << "Hero: " << getCurrHP() << " / " << getStamina()<< " HP"<<endl;
                 cout << "Monster: " << monster.getCurrHP() << " / " << monster.getStamina() <<endl;
-            }
         if (init==0)
         {
           while(getCurrHP() > 0 && monster.getCurrHP() > 0)
@@ -131,6 +132,11 @@ void Hero::levelUp()
         intelligence+= rand() %3;
         stamina+= rand() %20 + (0.5*getStrength());
         currHP = stamina;
+        int a = getWeaponDMG();
+        int b = getAccuracy();
+        setWeapon(Weapon(a+1,b+1));
+        int c = getArmorValue();
+        setArmor(Armor(c+1));
     }
     else if(getClass()=="Hunter")
     {
@@ -139,6 +145,11 @@ void Hero::levelUp()
         intelligence+= rand() %3 + 1;
         stamina+= rand() %20 + (0.5*getStrength());
         currHP = stamina;
+        int a = getWeaponDMG();
+        int b = getAccuracy();
+        setWeapon(Weapon(a+1,b+1));
+        int c = getArmorValue();
+        setArmor(Armor(c+1));
     }
     else if(getClass()=="Sorcerer")
     {
@@ -147,14 +158,58 @@ void Hero::levelUp()
         intelligence+= rand() %7 + 2;
         stamina+= rand() %20 + (0.5*getStrength());
         currHP = stamina;
+        int a = getWeaponDMG();
+        int b = getAccuracy();
+        setWeapon(Weapon(a+1,b+1));
+        int c = getArmorValue();
+        setArmor(Armor(c+1));
     }
 }
- void Hero::restore(Monster monster)
+ void Hero::restore()
  {
      currHP=stamina;
-     int mod=monster.getModifier();
+     /*int mod=monster.getModifier();
      mod++;
      monster.setModifier(mod);
+     int a = monster.getAttack();
+     int b = monster.getDefence();
+     int c = monster.getDamage();
+     int d = monster.getArmor();
+     int e = monster.getStamina();
+     monster.setAttack(a);
+     monster.setDefence(b);
+     monster.setDamage(c);
+     monster.setArmor(d);
+     monster.setStamina(e);*/
  }
 
-
+void Hero::startingStats()
+{
+    if(getClass()=="Warrior")
+    {
+        setStrength(15);
+        setAgility(12);
+        setIntelligence(9);
+        setStamina(20);
+        setWeapon(Weapon(6,15));
+        setArmor(Armor(8));
+    }
+    else if(getClass()=="Hunter")
+    {
+        setStrength(11);
+        setAgility(16);
+        setIntelligence(11);
+        setStamina(18);
+        setWeapon(Weapon(6,17));
+        setArmor(Armor(6));
+    }
+    else if(getClass()=="Sorcerer")
+    {
+        setStrength(10);
+        setAgility(10);
+        setIntelligence(18);
+        setStamina(14);
+        setWeapon(Weapon(8,16));
+        setArmor(Armor(4));
+    }
+}

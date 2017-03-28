@@ -15,6 +15,11 @@ struct Weapon
         {
 
         }
+    friend ostream& operator<<( ostream& out, const Weapon& weapon )
+    {
+        out << "( " << weapon.base_damage << ", " << weapon.accuracy << " )";
+        return out;
+    }
 };
 
 struct Armor
@@ -27,6 +32,12 @@ struct Armor
         {
 
         }
+
+    friend ostream& operator<<( ostream& out, const Armor& armor )
+    {
+        out << "( " << armor.base_armor << " )";
+        return out;
+    }
 
 };
 
