@@ -66,8 +66,8 @@ bool Hero::fight(Monster monster)
     int init = rand()%2;
     //while(getCurrHP() > 0 && monster.getCurrHP() > 0)
     {
-                cout << "Hero: " << getCurrHP() << " / " << getStamina()<< " HP"<<endl;
-                cout << "Monster: " << monster.getCurrHP() << " / " << monster.getStamina() << " HP" <<endl;
+                cout << getName() << ": " << getCurrHP() << " / " << getStamina()<< " HP"<<endl;
+                cout << monster.getName() << ": " << monster.getCurrHP() << " / " << monster.getStamina() << " HP" <<endl;
         if (init==0)
         {
           while(getCurrHP() > 0 && monster.getCurrHP() > 0)
@@ -79,7 +79,7 @@ bool Hero::fight(Monster monster)
                     if (dmg_dealt<0)
                         dmg_dealt=0;
                     monster.dmg(dmg_dealt);
-                    cout << getName() << " hits for " << dmg_dealt << " - " << monster.getName() << " has "<< monster.getCurrHP() << " HP left\n";
+                    cout << getName() << " hits for " << dmg_dealt << " -> " << monster.getName() << " has "<< monster.getCurrHP() << " HP left\n";
                 }
                 if(monster.getCurrHP()<0)
                     break;
@@ -90,7 +90,7 @@ bool Hero::fight(Monster monster)
                     if (dmg_dealt<0)
                         dmg_dealt=0;
                     dmg(dmg_dealt);
-                    cout << monster.getName() << " hits for " << dmg_dealt << " - " << getName() << " has " << getCurrHP() << " HP left\n";
+                    cout << monster.getName() << " hits for " << dmg_dealt << " -> " << getName() << " has " << getCurrHP() << " HP left\n";
                 }
                 if(getCurrHP()<0)
                     break;
@@ -108,7 +108,7 @@ bool Hero::fight(Monster monster)
                 if (dmg_dealt<0)
                     dmg_dealt=0;
                 dmg(dmg_dealt);
-                cout << monster.getName() << " hits for " << dmg_dealt << " - " << getName() << " has " << getCurrHP() << " HP left\n";
+                cout << monster.getName() << " hits for " << dmg_dealt << " -> " << getName() << " has " << getCurrHP() << " HP left\n";
             }
             if(getCurrHP()<0)
                 break;
@@ -119,7 +119,7 @@ bool Hero::fight(Monster monster)
                 if (dmg_dealt<0)
                     dmg_dealt=0;
                 monster.dmg(dmg_dealt);
-                cout << getName() << " hits for " << dmg_dealt << " - " << monster.getName() << " has "<< monster.getCurrHP() << " HP left\n";
+                cout << getName() << " hits for " << dmg_dealt << " -> " << monster.getName() << " has "<< monster.getCurrHP() << " HP left\n";
             }
             if(monster.getCurrHP()<0)
                 break;
@@ -179,7 +179,7 @@ void Hero::levelUp()
  {
      currHP = stamina;
      licznik++;
-     cout << "Monster level: " << licznik;
+     cout << "Monster level: " << licznik << endl;
      /*int mod = monster.getModifier();
      mod++;
      monster.setModifier(mod);

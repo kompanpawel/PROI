@@ -9,6 +9,6 @@ void test1()
     Monster monster1("Dragon",40,25,25,20,20,5);
     hero1.fight(monster1);
     hero1.restore();
-    cout << hero1;
+    cout << hero1 << endl;
 
 }

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1490840011 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\main.cpp
+1490876941 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\main.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>
@@ -13,7 +13,7 @@
 	<iostream>
 	<string>
 
-1490839983 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\hero.cpp
+1490876854 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\hero.cpp
 	<iostream>
 	<string>
 	<ctime>
@@ -21,7 +21,7 @@
 	"Hero.h"
 	"Equipment.h"
 
-1490839991 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\hero.h
+1490876918 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\hero.h
 	<iostream>
 	<string>
 	"Equipment.h"
@@ -31,7 +31,7 @@
 	<iostream>
 	<string>
 
-1490838517 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\menu.cpp
+1490876644 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\menu.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -50,7 +50,7 @@
 
 1490839643 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\test.h
 
-1490839935 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\test.cpp
+1490876975 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\test.cpp
 	<iostream>
 	"Test.h"
 	"Hero.h"

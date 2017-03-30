@@ -8,10 +8,7 @@ using namespace std;
 int main()
 {
     srand(time(0));
-    #ifdef DEBUG
     test1();
-    return 0;
-    #endif //DEBUG
-    return menu::showMenu();
+    menu::showMenu();
 
 }

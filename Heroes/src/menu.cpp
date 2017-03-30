@@ -10,6 +10,8 @@ Hero *menu::hero = nullptr;
 
 int menu::showMenu()
 {
+    setDifficulty();
+
     while(1)
     {
         cleanScreen();
@@ -17,8 +19,7 @@ int menu::showMenu()
         cout << "2. Show your hero\n";
         cout << "3. Fight with monsters\n";
         cout << "4. Take a rest and restore your HP (but monsters are getting stronger)\n";
-        cout << "5. Set difficulty\n";
-        cout << "6. Quit and end your adventure\n";
+        cout << "5. Quit and end your adventure\n";
 
         char option = '0';
         cin >> option;
@@ -30,8 +31,7 @@ int menu::showMenu()
             case '2': showHero(); break;
             case '3': pickMonster(); break;
             case '4': rest(); break;
-            case '5': setDifficulty(); break;
-            case '6':
+            case '5':
                 if( hero != nullptr )
                     delete hero;
                 return 0;
@@ -61,13 +61,13 @@ void menu::createHero()
       case '1': class_of_hero = "Warrior"; break;
       case '2': class_of_hero = "Hunter"; break;
       case '3': class_of_hero = "Sorcerer"; break;
+      default: return; break;
   }
 
   hero = new Hero(name, class_of_hero,0,0,0,0, Weapon(0,0), Armor(0),0,0);
 
   stopScreen();
 }
-
 bool menu::showHero()
 {
     cleanScreen();
@@ -163,7 +163,7 @@ void menu::rest()
 void menu::setDifficulty()
 {
     int choice;
-    cout << "Choose difficulty:\n1. Easy\n2. Hard";
+    cout << "Choose difficulty:\n1. Easy (your hero get HP restored after lvl up)\n2. Hard(your hero need to restore HP after fight)\n";
     cin >> choice;
     switch(choice)
     {

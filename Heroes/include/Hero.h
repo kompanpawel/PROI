@@ -59,7 +59,7 @@ public:
         }
     ~Hero()
         {
-          cout << name << " stopped fighting.";
+          cout << name << " retreated / has died. We unknown his exactly reason to abandon us.\n";
         }
 
     bool fight(Monster monster);
