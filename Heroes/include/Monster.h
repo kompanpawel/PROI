@@ -26,35 +26,34 @@ public:
         {
 
         }
-    Monster(std::string name, int stamina, int attack, int defence, int damage, int armor)
+    Monster(std::string name, int stamina, int attack, int defence, int damage, int armor, int mod)
     :
         name{name},
-        stamina{stamina},
-        currHP{stamina},
-        attack{attack},
-        defence{defence},
-        damage{damage},
-        armor{armor},
-        modifier{0}
+        stamina{stamina+2*mod},
+        currHP{stamina+2*mod},
+        attack{attack+mod},
+        defence{defence+mod},
+        damage{damage+mod},
+        armor{armor+mod},
+        modifier{mod}
         {
 
         }
 
     void dmg (int dmg) {currHP -= dmg;}
-
     void setName(std::string name_) {name = name_;}
     std::string getName() const {return name;}
-    void setStamina(int stamina_) {stamina = stamina_;}
+    void setStamina(int stamina_) {stamina = stamina_+ modifier;}
     int getStamina() const {return stamina;}
     void setCurrHP(int currHP_) {currHP = currHP_;}
     int getCurrHP() const {return currHP;}
-    void setAttack(int attack_) {attack=attack_+ 2*modifier;}
+    void setAttack(int attack_) {attack=attack_ + modifier;}
     int getAttack() const {return attack;}
-    void setDefence(int defence_) {defence=defence_ + 2*modifier;}
+    void setDefence(int defence_) {defence=defence_ + modifier;}
     int getDefence() const {return defence;}
-    void setDamage(int damage_) {damage=damage_ + 1*modifier;}
+    void setDamage(int damage_) {damage=damage_ + modifier;}
     int getDamage() const {return damage;}
-    void setArmor(int armor_) {armor=armor_ + 1*modifier;}
+    void setArmor(int armor_) {armor=armor_ + modifier;}
     int getArmor() const {return armor;}
     void setModifier(int modifier_) {modifier=modifier_;}
     int getModifier() const {return modifier;}

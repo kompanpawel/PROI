@@ -23,11 +23,11 @@ public:
     Menu() = delete;
     static int showMenu();
     static void createHero();
-    static bool fightMonster();
     static void pickMonster();
     static void rest();
     static bool showHero();
     static void setDifficulty();
+    static void showMod();
 };
 
 #endif // MENU_H

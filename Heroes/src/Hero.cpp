@@ -6,7 +6,7 @@
 #include "Equipment.h"
 using namespace std;
 
-double Hero::DIFFICULTY = 1;
+string Hero::DIFFICULTY = "easy";
 ostream& operator<<( ostream& out, const Hero& g )
 {
     out << "name = " << g.getName() << "\nclass = " << g.getClass() << "\nstrength = " << g.getStrength() << "\nagility = " <<
@@ -63,12 +63,11 @@ int Hero::weaponDmg()
 }
 bool Hero::fight(Monster monster)
 {
-
     int init = rand()%2;
     //while(getCurrHP() > 0 && monster.getCurrHP() > 0)
     {
                 cout << "Hero: " << getCurrHP() << " / " << getStamina()<< " HP"<<endl;
-                cout << "Monster: " << monster.getCurrHP() << " / " << monster.getStamina() <<endl;
+                cout << "Monster: " << monster.getCurrHP() << " / " << monster.getStamina() << " HP" <<endl;
         if (init==0)
         {
           while(getCurrHP() > 0 && monster.getCurrHP() > 0)
@@ -77,8 +76,10 @@ bool Hero::fight(Monster monster)
                 if(heroStrike > monster.getDefence())
                 {
                     int dmg_dealt = weaponDmg() - monster.getArmor();
+                    if (dmg_dealt<0)
+                        dmg_dealt=0;
                     monster.dmg(dmg_dealt);
-                    cout << getName() << "uderza za " << dmg_dealt << "Potworowi zostalo " << monster.getCurrHP() << " HP";
+                    cout << getName() << " hits for " << dmg_dealt << " - " << monster.getName() << " has "<< monster.getCurrHP() << " HP left\n";
                 }
                 if(monster.getCurrHP()<0)
                     break;
@@ -86,8 +87,10 @@ bool Hero::fight(Monster monster)
                 if(monsterStrike > getDefence())
                 {
                     int dmg_dealt = monster.getDamage() - getArmor().base_armor;
+                    if (dmg_dealt<0)
+                        dmg_dealt=0;
                     dmg(dmg_dealt);
-                    cout << monster.getName() << "uderza za " << dmg_dealt << "Bohater ma jeszcze " << getCurrHP() << " HP";
+                    cout << monster.getName() << " hits for " << dmg_dealt << " - " << getName() << " has " << getCurrHP() << " HP left\n";
                 }
                 if(getCurrHP()<0)
                     break;
@@ -102,8 +105,10 @@ bool Hero::fight(Monster monster)
             if(monsterStrike > getDefence())
             {
                 int dmg_dealt = monster.getDamage() - getArmor().base_armor;
+                if (dmg_dealt<0)
+                    dmg_dealt=0;
                 dmg(dmg_dealt);
-                cout << monster.getName() << "uderza za " << dmg_dealt << "Bohater ma jeszcze " << getCurrHP() << " HP";
+                cout << monster.getName() << " hits for " << dmg_dealt << " - " << getName() << " has " << getCurrHP() << " HP left\n";
             }
             if(getCurrHP()<0)
                 break;
@@ -111,8 +116,10 @@ bool Hero::fight(Monster monster)
             if(heroStrike > monster.getDefence())
             {
                 int dmg_dealt = weaponDmg() - monster.getArmor();
+                if (dmg_dealt<0)
+                    dmg_dealt=0;
                 monster.dmg(dmg_dealt);
-                cout << getName() << "uderza za " << dmg_dealt << "Potworowi zostalo " << monster.getCurrHP() << " HP";
+                cout << getName() << " hits for " << dmg_dealt << " - " << monster.getName() << " has "<< monster.getCurrHP() << " HP left\n";
             }
             if(monster.getCurrHP()<0)
                 break;
@@ -131,7 +138,8 @@ void Hero::levelUp()
         agility+= rand() %4 + 1;
         intelligence+= rand() %3;
         stamina+= rand() %20 + (0.5*getStrength());
-        currHP = stamina;
+        if (DIFFICULTY=="easy")
+            currHP = stamina;
         int a = getWeaponDMG();
         int b = getAccuracy();
         setWeapon(Weapon(a+1,b+1));
@@ -144,7 +152,8 @@ void Hero::levelUp()
         agility+= rand() %6 + 2;
         intelligence+= rand() %3 + 1;
         stamina+= rand() %20 + (0.5*getStrength());
-        currHP = stamina;
+        if (DIFFICULTY=="easy")
+            currHP = stamina;
         int a = getWeaponDMG();
         int b = getAccuracy();
         setWeapon(Weapon(a+1,b+1));
@@ -157,7 +166,8 @@ void Hero::levelUp()
         agility+= rand() %4 + 1;
         intelligence+= rand() %7 + 2;
         stamina+= rand() %20 + (0.5*getStrength());
-        currHP = stamina;
+        if (DIFFICULTY=="easy")
+            currHP = stamina;
         int a = getWeaponDMG();
         int b = getAccuracy();
         setWeapon(Weapon(a+1,b+1));
@@ -167,8 +177,10 @@ void Hero::levelUp()
 }
  void Hero::restore()
  {
-     currHP=stamina;
-     /*int mod=monster.getModifier();
+     currHP = stamina;
+     licznik++;
+     cout << "Monster level: " << licznik;
+     /*int mod = monster.getModifier();
      mod++;
      monster.setModifier(mod);
      int a = monster.getAttack();
@@ -180,7 +192,8 @@ void Hero::levelUp()
      monster.setDefence(b);
      monster.setDamage(c);
      monster.setArmor(d);
-     monster.setStamina(e);*/
+     monster.setStamina(e);
+     cout << monster.getModifier();*/
  }
 
 void Hero::startingStats()
@@ -191,6 +204,7 @@ void Hero::startingStats()
         setAgility(12);
         setIntelligence(9);
         setStamina(20);
+        currHP=stamina;
         setWeapon(Weapon(6,15));
         setArmor(Armor(8));
     }
@@ -200,6 +214,7 @@ void Hero::startingStats()
         setAgility(16);
         setIntelligence(11);
         setStamina(18);
+        currHP=stamina;
         setWeapon(Weapon(6,17));
         setArmor(Armor(6));
     }
@@ -209,6 +224,7 @@ void Hero::startingStats()
         setAgility(10);
         setIntelligence(18);
         setStamina(14);
+        currHP=stamina;
         setWeapon(Weapon(8,16));
         setArmor(Armor(4));
     }

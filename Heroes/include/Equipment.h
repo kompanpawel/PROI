@@ -17,7 +17,7 @@ struct Weapon
         }
     friend ostream& operator<<( ostream& out, const Weapon& weapon )
     {
-        out << "( " << weapon.base_damage << ", " << weapon.accuracy << " )";
+        out << "(dmg: " << weapon.base_damage << ",accuracy: " << weapon.accuracy << ")";
         return out;
     }
 };
@@ -35,7 +35,7 @@ struct Armor
 
     friend ostream& operator<<( ostream& out, const Armor& armor )
     {
-        out << "( " << armor.base_armor << " )";
+        out << "(" << armor.base_armor << ")";
         return out;
     }
 

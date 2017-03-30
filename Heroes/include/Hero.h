@@ -16,7 +16,7 @@ class Hero
    Armor armor;
    int attack;
    int defence;
-   static double DIFFICULTY; //mno¿nik od którego bêdzie zale¿eæ iloœæ naszych statystyk, wiêkszy oznacza lepsze staty, latwiej pokonaæ potwory :D
+   static string DIFFICULTY; //zmiana trybu gry
 
 public:
 
@@ -59,17 +59,18 @@ public:
         }
     ~Hero()
         {
-          cout << name << "died fighting with dark forces.";
+          cout << name << " stopped fighting.";
         }
 
     bool fight(Monster monster);
 
     void dmg(int dmg) {currHP -= dmg;}
+    int licznik=0;
     void restore();
     void levelUp();
     void startingStats();
 
-    static void setDifficulty (double diff) {DIFFICULTY = diff;}
+    static void setDifficulty (string change) {DIFFICULTY = change;}
 
     void setName (std::string name_) {name = name_;}
     std::string getName() const {return name;}
@@ -97,6 +98,7 @@ public:
     void confAttack();
     void setDefence();//int defence_) {defence= defence_;}
     int getDefence() const {return defence;}
+    void setLevel(int lvl) {level=lvl;}
     int getLevel() const {return level;}
 
 

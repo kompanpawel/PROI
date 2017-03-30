@@ -3,6 +3,7 @@
 #include <sstream>
 #include "Hero.h"
 #include "menu.h"
+#include "Monster.h"
 using namespace std;
 
 Hero *menu::hero = nullptr;
@@ -29,7 +30,7 @@ int menu::showMenu()
             case '2': showHero(); break;
             case '3': pickMonster(); break;
             case '4': rest(); break;
-            //case '5': setDifficulty(); break;
+            case '5': setDifficulty(); break;
             case '6':
                 if( hero != nullptr )
                     delete hero;
@@ -41,12 +42,17 @@ int menu::showMenu()
 void menu::createHero()
 {
   cleanScreen();
-
+  if (hero!=nullptr)
+  {
+      cout << "You have your own hero, that's enough for now!";
+      stopScreen();
+      return;
+  }
   cout << "Name: ";
   string name;
   cin >> name;
 
-  cout << "Pick your class(1 - Warrior; 2 - Hunter; 3 - Sorcerer) ";
+  cout << "Pick your class(1 - Warrior; 2 - Hunter; 3 - Sorcerer) \n";
   string class_of_hero;
   char pick = '0';
   cin >> pick;
@@ -81,39 +87,65 @@ bool menu::showHero()
 void menu::pickMonster()
 {
     cleanScreen();
-    if(hero == nullptr) return;
+    if(hero == nullptr)
+        {
+            cout << "You did not create your hero. How do you think you want to fight???";
+            stopScreen();
+            return;
+        }
 
-    cout << "Choose monster to fight[1. Easy  2.Medium  3.Hard  4.Final boss]";
+
+    cout << "Choose monster to fight[1. Easy  2.Medium  3.Hard  4.Final boss]\n";
     char option = '0';
     cin >> option;
     switch(option)
     {
         case '1':
             {
-                bool result = hero->fight(Monster("Kobold",10,10,13,6,6));
+                bool result = hero->fight(Monster("Kobold",10,10,13,6,6,hero->licznik));
                 if (result)
+                {
                     hero->levelUp();
+                    cout << hero->getName()<< " wins\n";
+                }
+                else
+                    delete hero;
                 break;
             }
         case '2':
             {
-                bool result = hero->fight(Monster("Golem",30,15,25,15,16));
+                bool result = hero->fight(Monster("Golem",30,15,25,15,16,hero->licznik));
                 if(result)
+                {
                     hero->levelUp();
+                    cout << hero->getName()<< " wins\n";
+                }
+                else
+                    delete hero;
                  break;
             }
         case '3':
             {
-                bool result = hero->fight(Monster("Wyvern",45,20,25,20,20));
+                bool result = hero->fight(Monster("Wyvern",45,20,25,20,20,hero->licznik));
                  if(result)
+                 {
                     hero->levelUp();
+                    cout << hero->getName()<< " wins\n";
+                }
+                else
+                    delete hero;
                 break;
             }
         case '4':
             {
-                bool result = hero->fight(Monster("Golden Dragon",80,30,30,28,30));
+                bool result = hero->fight(Monster("Golden Dragon",80,30,30,28,30,hero->licznik));
                 if(result)
+                {
                     hero->levelUp();
+                    cout << hero->getName()<< " wins\n";
+                }
+                else
+                    delete hero;
                  break;
             }
     }
@@ -127,3 +159,17 @@ void menu::rest()
     hero->restore();
     stopScreen();
 }
+
+void menu::setDifficulty()
+{
+    int choice;
+    cout << "Choose difficulty:\n1. Easy\n2. Hard";
+    cin >> choice;
+    switch(choice)
+    {
+        case 1: hero->setDifficulty("easy"); break;
+        case 2: hero->setDifficulty("hard"); break;
+        default: hero->setDifficulty("easy"); break;
+    }
+}
+
