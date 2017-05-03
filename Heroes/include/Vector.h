@@ -88,7 +88,7 @@ class Vector
 
     private:
 };
-template<>
+/*template<>
 void Vector<Monster>::pushback(Monster elem)
 {
     if (elem.getAttack()<10)
@@ -96,5 +96,5 @@ void Vector<Monster>::pushback(Monster elem)
     Vector::reallocMemory();
     store[size] = elem;
     size++;
-}
+}*/
 #endif // VECTOR_H
