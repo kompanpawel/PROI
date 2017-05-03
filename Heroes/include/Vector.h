@@ -31,7 +31,7 @@ class Vector
 
 
         };*/
-        typedef T* iterator;
+        typedef T* iterator; /**Used for moving inside container.*/
     iterator begin()
     {
         return &store[0];
@@ -41,20 +41,20 @@ class Vector
         return &store[size];
     }
 
-        Vector(int initialCapacity = Initial_Capacity)
+        Vector(int initialCapacity = Initial_Capacity) /**custom constructor*/
         :
             size{0}, capacity{initialCapacity}
         {
             store = new T[initialCapacity];
         }
-    void pushback(T elem)
+    void pushback(T elem) /**adding an element to the end of vector*/
     {
         if ((size + 1) > capacity)
         reallocMemory();
         store[size] = elem;
         size++;
     }
-    void reallocMemory()
+    void reallocMemory() /**allocing more memory, when space for next element is too short*/
     {
         capacity *=2;
         T *temp = new T[capacity];
@@ -65,7 +65,7 @@ class Vector
         delete[] store;
         store = temp;
     }
-    void remove(int i)
+    void remove(int i) /**deleting i element*/
     {
         for (i; i<size+1;i++)
         {
@@ -88,13 +88,7 @@ class Vector
 
     private:
 };
-/*template<>
-void Vector<Monster>::pushback(Monster elem)
-{
-    if (elem.getAttack()<10)
-        return;
-    Vector::reallocMemory();
-    store[size] = elem;
-    size++;
-}*/
+template<>
+void Vector<Monster>::pushback(Monster elem); /**specialized function*/
+
 #endif // VECTOR_H

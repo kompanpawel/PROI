@@ -16,11 +16,11 @@ class Hero
    Armor armor;
    int attack;
    int defence;
-   static string DIFFICULTY; //zmiana trybu gry
+   static string DIFFICULTY; /**zmiana trybu gry*/
 
 public:
 
-    Hero()
+    Hero() /**default constructor*/
     :
         name{"None"},
         class_of_hero{"None"},
@@ -38,7 +38,7 @@ public:
 
         }
 
-    Hero(std::string name, std::string class_of_hero, int strength, int agility, int intelligence, int stamina, Weapon weapon, Armor armor, int attack, int defence)
+    Hero(std::string name, std::string class_of_hero, int strength, int agility, int intelligence, int stamina, Weapon weapon, Armor armor, int attack, int defence)/**main constructor*/
     :
         name{name},
         class_of_hero{class_of_hero},
@@ -57,15 +57,15 @@ public:
             startingStats();
             confAttack();
         }
-    bool fight(Monster monster);
+    bool fight(Monster monster); /**fight with monsters*/
 
-    void dmg(int dmg) {currHP -= dmg;}
-    int licznik=0;
-    void restore();
-    void levelUp();
-    void startingStats();
+    void dmg(int dmg) {currHP -= dmg;} /**amount of damage taken by hero or monster*/
+    int licznik=0; /**modifier of monsters level*/
+    void restore(); /**restoring hero HP*/
+    void levelUp(); /**leveling up your hero*/
+    void startingStats(); /**starting statistics of your hero*/
 
-    static void setDifficulty (string change) {DIFFICULTY = change;}
+    static void setDifficulty (string change) {DIFFICULTY = change;} /**difficulty of game*/
 
     void setName (std::string name_) {name = name_;}
     std::string getName() const {return name;}
@@ -100,7 +100,7 @@ public:
 
 private:
     int weaponDmg();
-    void let_him_be()
+    void let_him_be() /**securing hero's statistics for not to be weak(his stats won't be less than 1)*/
     {
         strength = std::max(strength,1);
         agility = std::max(agility,1);
@@ -109,6 +109,6 @@ private:
     }
 };
 
-ostream& operator<<( ostream& out, const Hero& g );
+ostream& operator<<( ostream& out, const Hero& g ); /**showing information about your hero*/
 
 #endif // HERO_H

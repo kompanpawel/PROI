@@ -11,9 +11,9 @@ class Monster
     int currHP;
     int attack, defence;
     int damage, armor;
-    int modifier; //ka¿dy odpoczynek sprawia, ¿e potwory s¹ potê¿niejsze
+    int modifier; /*every rest makes monsters stronger*/
 public:
-    Monster()
+    Monster() /**default constructor*/
     :
         name{""},
         stamina{0},
@@ -26,7 +26,7 @@ public:
         {
 
         }
-    Monster(std::string name, int stamina, int attack, int defence, int damage, int armor, int mod)
+    Monster(std::string name, int stamina, int attack, int defence, int damage, int armor, int mod) /**main constructor of monsters*/
     :
         name{name},
         stamina{stamina+2*mod},
@@ -39,7 +39,7 @@ public:
         {
 
         }
-    Monster(const Monster& another)
+    Monster(const Monster& another) /**copying constructor*/
     :
         name{another.name},
         stamina{another.stamina},
@@ -52,7 +52,7 @@ public:
     {
 
     }
-    void dmg (int dmg) {currHP -= dmg;}
+    void dmg (int dmg) {currHP -= dmg;} /**amount of damage taken by hero or monster*/
     void setName(std::string name_) {name = name_;}
     std::string getName() const {return name;}
     void setStamina(int stamina_) {stamina = stamina_+ modifier;}
