@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1490876941 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\main.cpp
+1493405750 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\main.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>
@@ -13,7 +13,7 @@
 	<iostream>
 	<string>
 
-1490876854 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\hero.cpp
+1490877010 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\hero.cpp
 	<iostream>
 	<string>
 	<ctime>
@@ -21,17 +21,17 @@
 	"Hero.h"
 	"Equipment.h"
 
-1490876918 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\hero.h
+1493497282 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\hero.h
 	<iostream>
 	<string>
 	"Equipment.h"
 	"Monster.h"
 
-1490837235 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\monster.h
+1493413611 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\monster.h
 	<iostream>
 	<string>
 
-1490876644 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\menu.cpp
+1493398581 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\menu.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -48,11 +48,18 @@
 1490709191 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\monster.cpp
 	"Monster.h"
 
-1490839643 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\test.h
+1493405750 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\test.h
 
-1490876975 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\test.cpp
+1493840079 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\test.cpp
 	<iostream>
 	"Test.h"
 	"Hero.h"
+	"Monster.h"
+	"Vector.h"
+
+1493397342 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\vector.cpp
+	"Vector.h"
+
+1493843254 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\vector.h
 	"Monster.h"
 

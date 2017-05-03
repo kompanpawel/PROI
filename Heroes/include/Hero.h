@@ -22,12 +22,12 @@ public:
 
     Hero()
     :
-        name{""},
-        class_of_hero{""},
+        name{"None"},
+        class_of_hero{"None"},
         strength{0},
         agility{0},
         intelligence{0},
-        level{1},
+        level{},
         stamina{0},
         currHP{0},
         weapon{Weapon(0,0)},
@@ -57,11 +57,6 @@ public:
             startingStats();
             confAttack();
         }
-    ~Hero()
-        {
-          cout << name << " retreated / has died. We unknown his exactly reason to abandon us.\n";
-        }
-
     bool fight(Monster monster);
 
     void dmg(int dmg) {currHP -= dmg;}

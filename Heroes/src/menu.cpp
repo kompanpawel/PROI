@@ -109,7 +109,10 @@ void menu::pickMonster()
                     cout << hero->getName()<< " wins\n";
                 }
                 else
-                    delete hero;
+                    {
+                        delete hero;
+                        hero = nullptr;
+                    }
                 break;
             }
         case '2':
@@ -121,7 +124,10 @@ void menu::pickMonster()
                     cout << hero->getName()<< " wins\n";
                 }
                 else
-                    delete hero;
+                    {
+                        delete hero;
+                        hero = nullptr;
+                    }
                  break;
             }
         case '3':
@@ -133,7 +139,10 @@ void menu::pickMonster()
                     cout << hero->getName()<< " wins\n";
                 }
                 else
-                    delete hero;
+                    {
+                        delete hero;
+                        hero = nullptr;
+                    }
                 break;
             }
         case '4':
@@ -145,7 +154,10 @@ void menu::pickMonster()
                     cout << hero->getName()<< " wins\n";
                 }
                 else
-                    delete hero;
+                    {
+                        delete hero;
+                        hero = nullptr;
+                    }
                  break;
             }
     }

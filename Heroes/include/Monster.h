@@ -39,7 +39,19 @@ public:
         {
 
         }
+    Monster(const Monster& another)
+    :
+        name{another.name},
+        stamina{another.stamina},
+        currHP{another.stamina},
+        attack{another.attack},
+        defence{another.defence},
+        damage{another.damage},
+        armor{another.armor},
+        modifier{another.modifier}
+    {
 
+    }
     void dmg (int dmg) {currHP -= dmg;}
     void setName(std::string name_) {name = name_;}
     std::string getName() const {return name;}

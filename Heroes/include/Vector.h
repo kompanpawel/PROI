@@ -32,6 +32,14 @@ class Vector
 
         };*/
         typedef T* iterator;
+    iterator begin()
+    {
+        return &store[0];
+    }
+    iterator end()
+    {
+        return &store[size];
+    }
 
         Vector(int initialCapacity = Initial_Capacity)
         :
@@ -76,22 +84,17 @@ class Vector
     {
         remove(i);
     }
-    iterator begin()
-    {
-        return &store[0];
-    }
-    iterator end()
-    {
-        return &store[size];
-    }
     protected:
 
     private:
 };
 template<>
-void Vector<Monster>::pushback(Monster monster)
+void Vector<Monster>::pushback(Monster elem)
 {
-    if (monster.getAttack()<10)
+    if (elem.getAttack()<10)
         return;
+    Vector::reallocMemory();
+    store[size] = elem;
+    size++;
 }
 #endif // VECTOR_H
