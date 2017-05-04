@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1493405750 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\main.cpp
+1493910081 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\main.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>
@@ -9,7 +9,7 @@
 1490652792 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\equipment.cpp
 	"Equipment.h"
 
-1490838599 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\equipment.h
+1493848170 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\equipment.h
 	<iostream>
 	<string>
 
@@ -21,13 +21,13 @@
 	"Hero.h"
 	"Equipment.h"
 
-1493497282 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\hero.h
+1493848130 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\hero.h
 	<iostream>
 	<string>
 	"Equipment.h"
 	"Monster.h"
 
-1493413611 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\monster.h
+1493909612 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\monster.h
 	<iostream>
 	<string>
 
@@ -45,21 +45,25 @@
 	<windows.h>
 	"Hero.h"
 
-1490709191 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\monster.cpp
+1493909831 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\monster.cpp
+	<iostream>
+	<cstdlib>
 	"Monster.h"
 
-1493405750 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\test.h
+1493908954 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\test.h
 
-1493840079 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\test.cpp
+1493909962 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\test.cpp
 	<iostream>
 	"Test.h"
 	"Hero.h"
 	"Monster.h"
 	"Vector.h"
 
-1493844514 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\vector.cpp
+1493910071 source:c:\users\kompanpawel\desktop\proi-projekty\heroes\src\vector.cpp
 	"Vector.h"
 
-1493846939 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\vector.h
+1493910336 c:\users\kompanpawel\desktop\proi-projekty\heroes\include\vector.h
 	"Monster.h"
+	<cstdlib>
+	<iostream>
 

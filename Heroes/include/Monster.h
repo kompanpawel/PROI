@@ -72,4 +72,5 @@ public:
     private:
 };
 
+std::ostream& operator<<( std::ostream& out, const Monster& g );
 #endif // MONSTER_H

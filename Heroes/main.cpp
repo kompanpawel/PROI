@@ -13,7 +13,7 @@ int main()
     cin >> choice;
     switch(choice)
     {
-        case '1': test3(); break;
+        case '1': test3();test4(); break;
         case '2': menu::showMenu(); break;
     }
 return 0;

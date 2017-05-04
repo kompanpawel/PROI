@@ -46,8 +46,14 @@ void test3()
     Hero hero4("Banduin", "Sorcerer",0,0,0,0,Weapon(0,0),Armor(0),0,0);
     v+hero3;
     v+hero4;
-     //   for(Vector<Hero>::iterator it = v.begin(); it!= v.end(); it++)
-    //{
-    //    cout << *it << endl;
-    //}
     }
+void test4()
+{
+    Vector<Monster> m;
+    for(int i=0; i<100000; i++)
+    {
+        Monster monster1("Kobold",10,10,10,10,10,0);
+        m+monster1;
+    }
+    cout << m[0];
+}
