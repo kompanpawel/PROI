@@ -6,7 +6,7 @@ void Vector<Monster>::pushback(Monster elem)
 {
     if (elem.getAttack()<10)
         {
-            std::cout<< "Too weak monster. Try make it again";
+            std::cout<< "Too weak monster. Try make it again" << std::endl;
             return;
         }
     if(size+1 > capacity)

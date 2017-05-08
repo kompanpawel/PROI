@@ -33,25 +33,26 @@ class Vector
 
 
         };*/
-        typedef T* iterator; /**Used for moving inside container.*/
-    iterator begin()
+        typedef T* iterator;
+    iterator begin() /**head of vector*/
     {
         return &store[0];
     }
-    iterator end()
+    iterator end() /**end of vector*/
     {
         return &store[size];
     }
 
-        Vector(int initialCapacity = Initial_Capacity) /**custom constructor*/
+        Vector(int initialCapacity = Initial_Capacity) /**default constructor*/
         :
             size{0}, capacity{initialCapacity}
         {
             store = new T[initialCapacity];
         }
 
-    ~Vector()
+    ~Vector() /**destructor*/
     {
+        if (store!=nullptr)
         delete[] store;
     }
 ////////////////////////////////////////METHODS//////////////////////////////////////////////
@@ -62,7 +63,7 @@ class Vector
         store[size] = elem;
         size++;
     }
-    void popback()
+    void popback() /**deleting last element*/
     {
         if(size == 0)
         {
@@ -117,6 +118,10 @@ class Vector
         other.store = nullptr;
         other.size = 0;
         other.capacity = 0;
+    }
+    int showSize() /**returning size of a vector*/
+    {
+        return size;
     }
     protected:
 

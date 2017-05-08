@@ -4,7 +4,13 @@
 #include "menu.h"
 #include "Test.h"
 using namespace std;
-
+void stopScreen()
+   {
+       std::cout << "\nType any character to continue " << endl;
+       std::cin.clear();
+       std::cin.ignore();
+       std::cin.get();
+   }
 int main()
 {
     srand(time(0));
@@ -13,7 +19,7 @@ int main()
     cin >> choice;
     switch(choice)
     {
-        case '1': test3();test4(); break;
+        case '1': test3();stopScreen();test4();stopScreen();test5();stopScreen();test6(); break;
         case '2': menu::showMenu(); break;
     }
 return 0;
