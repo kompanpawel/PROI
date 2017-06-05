@@ -34,18 +34,18 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/EarthMonster.h" />
 		<Unit filename="include/Equipment.h" />
 		<Unit filename="include/Hero.h" />
 		<Unit filename="include/Monster.h" />
 		<Unit filename="include/Test.h" />
-		<Unit filename="include/Vector.h" />
 		<Unit filename="include/menu.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/EarthMonster.cpp" />
 		<Unit filename="src/Equipment.cpp" />
 		<Unit filename="src/Hero.cpp" />
 		<Unit filename="src/Monster.cpp" />
 		<Unit filename="src/Test.cpp" />
-		<Unit filename="src/Vector.cpp" />
 		<Unit filename="src/menu.cpp" />
 		<Extensions>
 			<code_completion />

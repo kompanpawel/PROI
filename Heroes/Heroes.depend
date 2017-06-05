@@ -67,3 +67,89 @@
 	<cstdlib>
 	<iostream>
 
+1496608889 source:c:\users\kompanpawel\desktop\proi\heroes\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	"menu.h"
+	"Test.h"
+
+1496622867 c:\users\kompanpawel\desktop\proi\heroes\include\menu.h
+	<iostream>
+	<string>
+	<windows.h>
+	"Hero.h"
+	<vector>
+	"Monster.h"
+
+1496616466 c:\users\kompanpawel\desktop\proi\heroes\include\hero.h
+	<iostream>
+	<string>
+	"Equipment.h"
+	"Monster.h"
+
+1493848170 c:\users\kompanpawel\desktop\proi\heroes\include\equipment.h
+	<iostream>
+	<string>
+
+1496625692 c:\users\kompanpawel\desktop\proi\heroes\include\monster.h
+	<iostream>
+	<string>
+	"Hero.h"
+
+1493919737 c:\users\kompanpawel\desktop\proi\heroes\include\test.h
+
+1490652792 source:c:\users\kompanpawel\desktop\proi\heroes\src\equipment.cpp
+	"Equipment.h"
+
+1496616540 source:c:\users\kompanpawel\desktop\proi\heroes\src\hero.cpp
+	<iostream>
+	<string>
+	<sstream>
+	<ctime>
+	<cstdlib>
+	"Hero.h"
+	"Equipment.h"
+
+1496625876 source:c:\users\kompanpawel\desktop\proi\heroes\src\menu.cpp
+	<iostream>
+	<string>
+	<sstream>
+	<vector>
+	"Hero.h"
+	"menu.h"
+	"Monster.h"
+	"EarthMonster.h"
+
+1496539279 source:c:\users\kompanpawel\desktop\proi\heroes\src\monster.cpp
+	<iostream>
+	<cstdlib>
+	"Monster.h"
+
+1496608836 source:c:\users\kompanpawel\desktop\proi\heroes\src\test.cpp
+	<iostream>
+	"Test.h"
+	"Hero.h"
+	"Monster.h"
+
+1493920733 c:\users\kompanpawel\desktop\proi\heroes\include\vector.h
+	"Monster.h"
+	<cstdlib>
+	<iostream>
+
+1493920180 source:c:\users\kompanpawel\desktop\proi\heroes\src\vector.cpp
+	"Vector.h"
+
+1496625774 source:c:\users\kompanpawel\desktop\proi\heroes\src\earthmonster.cpp
+	"EarthMonster.h"
+	<iostream>
+	<string>
+	<ctime>
+	<cstdlib>
+	"Hero.h"
+	"Equipment.h"
+
+1496608890 c:\users\kompanpawel\desktop\proi\heroes\include\earthmonster.h
+	<iostream>
+	"Hero.h"
+

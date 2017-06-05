@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <ctime>
 #include <cstdlib>
 #include "Hero.h"
@@ -61,10 +62,12 @@ int Hero::weaponDmg()
         return weapon_dmg;
         }
 }
-bool Hero::fight(Monster monster)
+bool Hero::fight(Monster *monster)
 {
-    int init = rand()%2;
-    //while(getCurrHP() > 0 && monster.getCurrHP() > 0)
+
+    monster->fight(this);
+    /*int init = rand()%2;
+    while(getCurrHP() > 0 && monster.getCurrHP() > 0)
     {
                 cout << getName() << ": " << getCurrHP() << " / " << getStamina()<< " HP"<<endl;
                 cout << monster.getName() << ": " << monster.getCurrHP() << " / " << monster.getStamina() << " HP" <<endl;
@@ -126,7 +129,7 @@ bool Hero::fight(Monster monster)
         }
         return (getCurrHP()>0) ? true : false;
     }
-}
+}*/
 }
 
 void Hero::levelUp()
@@ -228,4 +231,12 @@ void Hero::startingStats()
         setWeapon(Weapon(8,16));
         setArmor(Armor(4));
     }
+}
+string Hero::to_string(const Hero& g)
+{
+    stringstream ss;
+    ss << g.getName() << endl << g.getClass() << endl << g.getStrength() << endl << g.getAgility() << endl
+        << g.getIntelligence() << endl << g.getCurrHP() << endl << g.getStamina() << endl <<
+            g.getWeapon() << endl << g.getArmor() << endl << g.getLevel() << endl;
+    return ss.str();
 }

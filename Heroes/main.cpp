@@ -19,7 +19,6 @@ int main()
     cin >> choice;
     switch(choice)
     {
-        case '1': test3();stopScreen();test4();stopScreen();test5();stopScreen();test6(); break;
         case '2': menu::showMenu(); break;
     }
 return 0;

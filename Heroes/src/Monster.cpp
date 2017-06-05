@@ -13,3 +13,4 @@ std::ostream& operator<<( std::ostream& out, const Monster& g )
         "\nweapon = (" << g.getWeapon() << "\narmor = " << g.getArmor() << ")" << "\nlevel = " << g.getLevel();*/
     return out;
 }
+

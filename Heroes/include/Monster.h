@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include "Hero.h"
 
+class Hero;
 class Monster
 {
     std::string name;
@@ -12,6 +14,8 @@ class Monster
     int attack, defence;
     int damage, armor;
     int modifier; /*every rest makes monsters stronger*/
+    int type; /**1 for easy, 10 for medium, 100 for hard and 1000 for bosses*/
+
 public:
     Monster() /**default constructor*/
     :
@@ -22,11 +26,12 @@ public:
         defence{0},
         damage{0},
         armor{0},
-        modifier{0}
+        modifier{0},
+        type{1}
         {
 
         }
-    Monster(std::string name, int stamina, int attack, int defence, int damage, int armor, int mod) /**main constructor of monsters*/
+    Monster(std::string name, int stamina, int attack, int defence, int damage, int armor, int mod, int type) /**main constructor of monsters*/
     :
         name{name},
         stamina{stamina+2*mod},
@@ -35,7 +40,8 @@ public:
         defence{defence+mod},
         damage{damage+mod},
         armor{armor+mod},
-        modifier{mod}
+        modifier{mod},
+        type{type}
         {
 
         }
@@ -48,11 +54,14 @@ public:
         defence{another.defence},
         damage{another.damage},
         armor{another.armor},
-        modifier{another.modifier}
+        modifier{another.modifier},
+        type{another.type}
     {
 
     }
     void dmg (int dmg) {currHP -= dmg;} /**amount of damage taken by hero or monster*/
+    virtual bool fight(Hero *hero) = 0;
+
     void setName(std::string name_) {name = name_;}
     std::string getName() const {return name;}
     void setStamina(int stamina_) {stamina = stamina_+ modifier;}
@@ -69,6 +78,9 @@ public:
     int getArmor() const {return armor;}
     void setModifier(int modifier_) {modifier=modifier_;}
     int getModifier() const {return modifier;}
+    void setType(int type_) {type=type_;}
+    int getType() const {return type;}
+
     private:
 };
 

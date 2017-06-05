@@ -1,12 +1,15 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <vector>
 #include "Hero.h"
 #include "menu.h"
 #include "Monster.h"
+#include "EarthMonster.h"
 using namespace std;
 
 Hero *menu::hero = nullptr;
+Monster *menu::monster = nullptr;
 
 int menu::showMenu()
 {
@@ -19,7 +22,7 @@ int menu::showMenu()
         cout << "2. Show your hero\n";
         cout << "3. Fight with monsters\n";
         cout << "4. Take a rest and restore your HP (but monsters are getting stronger)\n";
-        cout << "5. Quit and end your adventure\n";
+        cout << "6. Quit and end your adventure\n";
 
         char option = '0';
         cin >> option;
@@ -102,7 +105,7 @@ void menu::pickMonster()
     {
         case '1':
             {
-                bool result = hero->fight(Monster("Kobold",10,10,13,6,6,hero->licznik));
+                bool result = hero->fight(new EarthMonster("Kobold",10,10,13,6,6,hero->licznik,1));
                 if (result)
                 {
                     hero->levelUp();
@@ -117,7 +120,7 @@ void menu::pickMonster()
             }
         case '2':
             {
-                bool result = hero->fight(Monster("Golem",30,15,25,15,16,hero->licznik));
+                bool result = hero->fight(new EarthMonster("Golem",30,15,25,15,16,hero->licznik,5));
                 if(result)
                 {
                     hero->levelUp();
@@ -132,7 +135,7 @@ void menu::pickMonster()
             }
         case '3':
             {
-                bool result = hero->fight(Monster("Wyvern",45,20,25,20,20,hero->licznik));
+                bool result = hero->fight(new EarthMonster("Wyvern",45,20,25,20,20,hero->licznik,10));
                  if(result)
                  {
                     hero->levelUp();
@@ -147,7 +150,7 @@ void menu::pickMonster()
             }
         case '4':
             {
-                bool result = hero->fight(Monster("Golden Dragon",80,30,30,28,30,hero->licznik));
+                bool result = hero->fight(new EarthMonster("Golden Dragon",80,30,30,28,30,hero->licznik,20));
                 if(result)
                 {
                     hero->levelUp();
@@ -168,7 +171,14 @@ void menu::pickMonster()
 void menu::rest()
 {
     cleanScreen();
-    hero->restore();
+    if(hero == nullptr)
+    {
+        cout << "You did not create any hero.";
+        stopScreen();
+        return;
+    }
+    else
+        hero->restore();
     stopScreen();
 }
 
@@ -185,3 +195,8 @@ void menu::setDifficulty()
     }
 }
 
+void menu::createMonsters()
+{
+    EarthMonster *easy_earth_1 = new EarthMonster("Kobold",10,10,13,6,6,hero->licznik,1);
+   // easy_monsters.push_back(easy_earth_1);
+}

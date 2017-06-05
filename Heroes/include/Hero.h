@@ -5,6 +5,7 @@
 #include "Equipment.h"
 #include "Monster.h"
 
+class Monster;
 class Hero
 {
    std::string name, class_of_hero;
@@ -57,13 +58,14 @@ public:
             startingStats();
             confAttack();
         }
-    bool fight(Monster monster); /**fight with monsters*/
+    bool fight(Monster *monster); /**fight with monsters*/
 
     void dmg(int dmg) {currHP -= dmg;} /**amount of damage taken by hero or monster*/
     int licznik=0; /**modifier of monsters level*/
     void restore(); /**restoring hero HP*/
     void levelUp(); /**leveling up your hero*/
     void startingStats(); /**starting statistics of your hero*/
+    static string to_string(const Hero& g);
 
     static void setDifficulty (string change) {DIFFICULTY = change;} /**difficulty of game*/
 
@@ -95,11 +97,11 @@ public:
     int getDefence() const {return defence;}
     void setLevel(int lvl) {level=lvl;}
     int getLevel() const {return level;}
-
+    int weaponDmg();
 
 
 private:
-    int weaponDmg();
+
     void let_him_be() /**securing hero's statistics for not to be weak(his stats won't be less than 1)*/
     {
         strength = std::max(strength,1);
