@@ -232,11 +232,11 @@ void Hero::startingStats()
         setArmor(Armor(4));
     }
 }
-string Hero::to_string(const Hero& g)
+string Hero::to_string()
 {
     stringstream ss;
-    ss << g.getName() << endl << g.getClass() << endl << g.getStrength() << endl << g.getAgility() << endl
-        << g.getIntelligence() << endl << g.getCurrHP() << endl << g.getStamina() << endl <<
-            g.getWeapon() << endl << g.getArmor() << endl << g.getLevel() << endl;
+    ss << getName() << endl << getClass() << endl << getStrength() << endl << getAgility() << endl
+        << getIntelligence() << endl << getCurrHP() << endl << getStamina() << endl <<
+            getWeaponDMG() << endl <<getAccuracy() << endl << getArmorValue() << endl << getLevel() << endl;
     return ss.str();
 }

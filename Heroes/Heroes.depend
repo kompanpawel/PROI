@@ -67,14 +67,14 @@
 	<cstdlib>
 	<iostream>
 
-1496608889 source:c:\users\kompanpawel\desktop\proi\heroes\main.cpp
+1496710719 source:c:\users\kompanpawel\desktop\proi\heroes\main.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>
 	"menu.h"
 	"Test.h"
 
-1496622867 c:\users\kompanpawel\desktop\proi\heroes\include\menu.h
+1496760254 c:\users\kompanpawel\desktop\proi\heroes\include\menu.h
 	<iostream>
 	<string>
 	<windows.h>
@@ -82,17 +82,17 @@
 	<vector>
 	"Monster.h"
 
-1496616466 c:\users\kompanpawel\desktop\proi\heroes\include\hero.h
+1496760256 c:\users\kompanpawel\desktop\proi\heroes\include\hero.h
 	<iostream>
 	<string>
 	"Equipment.h"
 	"Monster.h"
 
-1493848170 c:\users\kompanpawel\desktop\proi\heroes\include\equipment.h
+1496767341 c:\users\kompanpawel\desktop\proi\heroes\include\equipment.h
 	<iostream>
 	<string>
 
-1496625692 c:\users\kompanpawel\desktop\proi\heroes\include\monster.h
+1496772327 c:\users\kompanpawel\desktop\proi\heroes\include\monster.h
 	<iostream>
 	<string>
 	"Hero.h"
@@ -102,7 +102,7 @@
 1490652792 source:c:\users\kompanpawel\desktop\proi\heroes\src\equipment.cpp
 	"Equipment.h"
 
-1496616540 source:c:\users\kompanpawel\desktop\proi\heroes\src\hero.cpp
+1496767762 source:c:\users\kompanpawel\desktop\proi\heroes\src\hero.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -111,17 +111,22 @@
 	"Hero.h"
 	"Equipment.h"
 
-1496625876 source:c:\users\kompanpawel\desktop\proi\heroes\src\menu.cpp
+1496772391 source:c:\users\kompanpawel\desktop\proi\heroes\src\menu.cpp
 	<iostream>
 	<string>
 	<sstream>
 	<vector>
+	<fstream>
 	"Hero.h"
 	"menu.h"
+	"save_error.h"
 	"Monster.h"
 	"EarthMonster.h"
+	"FireMonster.h"
+	"WaterMonster.h"
+	"AirMonster.h"
 
-1496539279 source:c:\users\kompanpawel\desktop\proi\heroes\src\monster.cpp
+1496772480 source:c:\users\kompanpawel\desktop\proi\heroes\src\monster.cpp
 	<iostream>
 	<cstdlib>
 	"Monster.h"
@@ -140,7 +145,7 @@
 1493920180 source:c:\users\kompanpawel\desktop\proi\heroes\src\vector.cpp
 	"Vector.h"
 
-1496625774 source:c:\users\kompanpawel\desktop\proi\heroes\src\earthmonster.cpp
+1496710224 source:c:\users\kompanpawel\desktop\proi\heroes\src\earthmonster.cpp
 	"EarthMonster.h"
 	<iostream>
 	<string>
@@ -152,4 +157,49 @@
 1496608890 c:\users\kompanpawel\desktop\proi\heroes\include\earthmonster.h
 	<iostream>
 	"Hero.h"
+
+1496710224 source:c:\users\kompanpawel\desktop\proi\heroes\src\airmonster.cpp
+	"AirMonster.h"
+	<iostream>
+	<string>
+	<ctime>
+	<cstdlib>
+	"Hero.h"
+	"Equipment.h"
+
+1496654999 c:\users\kompanpawel\desktop\proi\heroes\include\airmonster.h
+	<iostream>
+	"Hero.h"
+
+1496710224 source:c:\users\kompanpawel\desktop\proi\heroes\src\firemonster.cpp
+	"FireMonster.h"
+	<iostream>
+	<string>
+	<ctime>
+	<cstdlib>
+	"Hero.h"
+	"Equipment.h"
+
+1496654999 c:\users\kompanpawel\desktop\proi\heroes\include\firemonster.h
+	<iostream>
+	"Hero.h"
+
+1496710224 source:c:\users\kompanpawel\desktop\proi\heroes\src\watermonster.cpp
+	"WaterMonster.h"
+	<iostream>
+	<string>
+	<ctime>
+	<cstdlib>
+	"Hero.h"
+	"Equipment.h"
+
+1496654999 c:\users\kompanpawel\desktop\proi\heroes\include\watermonster.h
+	<iostream>
+	"Hero.h"
+
+1496771467 c:\users\kompanpawel\desktop\proi\heroes\include\save_error.h
+	<string>
+
+1496771473 source:c:\users\kompanpawel\desktop\proi\heroes\src\save_error.cpp
+	"save_error.h"
 

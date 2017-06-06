@@ -58,6 +58,25 @@ public:
             startingStats();
             confAttack();
         }
+    Hero(std::string name, std::string class_of_hero, int strength, int agility, int intelligence,int currHP, int stamina, Weapon weapon, Armor armor,int level, int attack, int defence)/**main constructor*/
+    :
+        name{name},
+        class_of_hero{class_of_hero},
+        strength{strength},
+        agility{agility},
+        intelligence{intelligence},
+        level{level},
+        stamina{stamina},
+        currHP{stamina},
+        weapon{weapon},
+        armor{armor},
+        attack{attack},
+        defence{defence}
+        {
+            let_him_be();
+            startingStats();
+            confAttack();
+        }
     bool fight(Monster *monster); /**fight with monsters*/
 
     void dmg(int dmg) {currHP -= dmg;} /**amount of damage taken by hero or monster*/
@@ -65,7 +84,7 @@ public:
     void restore(); /**restoring hero HP*/
     void levelUp(); /**leveling up your hero*/
     void startingStats(); /**starting statistics of your hero*/
-    static string to_string(const Hero& g);
+    string to_string();
 
     static void setDifficulty (string change) {DIFFICULTY = change;} /**difficulty of game*/
 

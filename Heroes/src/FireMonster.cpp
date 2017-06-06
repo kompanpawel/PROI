@@ -1,4 +1,4 @@
-#include "EarthMonster.h"
+#include "FireMonster.h"
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -6,7 +6,7 @@
 #include "Hero.h"
 #include "Equipment.h"
 
-bool EarthMonster::fight(Hero *hero)
+bool FireMonster::fight(Hero *hero)
 {
 int init = rand()%2;
     while(hero->getCurrHP() > 0 && getCurrHP() > 0)
@@ -20,7 +20,7 @@ int init = rand()%2;
                 int heroStrike = rand() %20 + 1 + hero->getAttack();
                 if(heroStrike > getDefence())
                 {
-                    int dmg_dealt = hero->weaponDmg() - (getArmor() + 1 * getType());
+                    int dmg_dealt = hero->weaponDmg() - (getArmor());
                     if (dmg_dealt<1)
                         dmg_dealt=0;
                     dmg(dmg_dealt);
@@ -31,7 +31,7 @@ int init = rand()%2;
                 int monsterStrike = rand() %20 +1 +getAttack();
                 if(monsterStrike > hero->getDefence())
                 {
-                    int dmg_dealt = getDamage() - hero->getArmor().base_armor;
+                    int dmg_dealt = (getDamage() + 1*getType()) - hero->getArmor().base_armor;
                     if (dmg_dealt<1)
                         dmg_dealt=0;
                     hero->dmg(dmg_dealt);
@@ -49,7 +49,7 @@ int init = rand()%2;
                 int monsterStrike = rand() %20 +1 +getAttack();
             if(monsterStrike > hero->getDefence())
             {
-                int dmg_dealt = getDamage() - hero->getArmor().base_armor;
+                int dmg_dealt = (getDamage() + 1*getType()) - hero->getArmor().base_armor;
                 if (dmg_dealt<1)
                     dmg_dealt=0;
                 hero->dmg(dmg_dealt);
@@ -60,7 +60,7 @@ int init = rand()%2;
             int heroStrike = rand() % 20 + 1 + hero->getAttack();
             if(heroStrike > getDefence())
             {
-                int dmg_dealt = hero->weaponDmg() - (getArmor() + 1 * getType());
+                int dmg_dealt = hero->weaponDmg() - (getArmor());
                 if (dmg_dealt<1)
                     dmg_dealt=0;
                 dmg(dmg_dealt);
@@ -73,4 +73,3 @@ int init = rand()%2;
     }
 }
 }
-

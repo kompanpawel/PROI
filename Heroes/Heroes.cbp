@@ -34,19 +34,27 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/AirMonster.h" />
 		<Unit filename="include/EarthMonster.h" />
 		<Unit filename="include/Equipment.h" />
+		<Unit filename="include/FireMonster.h" />
 		<Unit filename="include/Hero.h" />
 		<Unit filename="include/Monster.h" />
 		<Unit filename="include/Test.h" />
+		<Unit filename="include/WaterMonster.h" />
 		<Unit filename="include/menu.h" />
+		<Unit filename="include/save_error.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/AirMonster.cpp" />
 		<Unit filename="src/EarthMonster.cpp" />
 		<Unit filename="src/Equipment.cpp" />
+		<Unit filename="src/FireMonster.cpp" />
 		<Unit filename="src/Hero.cpp" />
 		<Unit filename="src/Monster.cpp" />
 		<Unit filename="src/Test.cpp" />
+		<Unit filename="src/WaterMonster.cpp" />
 		<Unit filename="src/menu.cpp" />
+		<Unit filename="src/save_error.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

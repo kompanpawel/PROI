@@ -1,4 +1,4 @@
-#include "EarthMonster.h"
+#include "AirMonster.h"
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -6,7 +6,7 @@
 #include "Hero.h"
 #include "Equipment.h"
 
-bool EarthMonster::fight(Hero *hero)
+bool AirMonster::fight(Hero *hero)
 {
 int init = rand()%2;
     while(hero->getCurrHP() > 0 && getCurrHP() > 0)
@@ -20,9 +20,15 @@ int init = rand()%2;
                 int heroStrike = rand() %20 + 1 + hero->getAttack();
                 if(heroStrike > getDefence())
                 {
-                    int dmg_dealt = hero->weaponDmg() - (getArmor() + 1 * getType());
+                    int dmg_dealt = hero->weaponDmg() - (getArmor());
+                    int dodge_chance = rand() %101;
                     if (dmg_dealt<1)
                         dmg_dealt=0;
+                    if (dodge_chance < 2*getType()+1)
+                    {
+                        dmg_dealt = 0;
+                        cout << getName() << " dodged attack." << endl;
+                    }
                     dmg(dmg_dealt);
                     cout << hero->getName() << " hits for " << dmg_dealt << " -> " << getName() << " has "<< getCurrHP() << " HP left\n";
                 }
@@ -60,9 +66,15 @@ int init = rand()%2;
             int heroStrike = rand() % 20 + 1 + hero->getAttack();
             if(heroStrike > getDefence())
             {
-                int dmg_dealt = hero->weaponDmg() - (getArmor() + 1 * getType());
+                int dmg_dealt = hero->weaponDmg() - (getArmor());
+                int dodge_chance = rand() %101;
                 if (dmg_dealt<1)
                     dmg_dealt=0;
+                if (dodge_chance < 2*getType()+1)
+                {
+                    dmg_dealt = 0;
+                    cout << getName() << " dodged attack." << endl;
+                }
                 dmg(dmg_dealt);
                 cout << hero->getName() << " hits for " << dmg_dealt << " -> " << getName() << " has "<< getCurrHP() << " HP left\n";
             }

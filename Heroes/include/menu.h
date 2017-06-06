@@ -37,7 +37,10 @@ public:
     static void setDifficulty();
     static void showMod();
     static void save();
+    static void load();
     static void createMonsters();
+    static void restoreMonstersHP();
+    static void deleteMonsters();
 };
 
 #endif // MENU_H

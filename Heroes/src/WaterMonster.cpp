@@ -1,4 +1,4 @@
-#include "EarthMonster.h"
+#include "WaterMonster.h"
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -6,7 +6,7 @@
 #include "Hero.h"
 #include "Equipment.h"
 
-bool EarthMonster::fight(Hero *hero)
+bool WaterMonster::fight(Hero *hero)
 {
 int init = rand()%2;
     while(hero->getCurrHP() > 0 && getCurrHP() > 0)
@@ -39,6 +39,10 @@ int init = rand()%2;
                 }
                 if(hero->getCurrHP()<0)
                     break;
+                setCurrHP(getCurrHP() + 1 * getType());
+                if (getCurrHP()>getStamina())
+                    setCurrHP(getStamina());
+                cout << getName() << " heals for " <<  1 * getType() << " HP" <<" now has " << getCurrHP() << " HP" <<  endl;
             }
             return (hero->getCurrHP()>0) ? true : false;
         }
@@ -68,9 +72,12 @@ int init = rand()%2;
             }
             if(getCurrHP()<1)
                 break;
+            setCurrHP(getCurrHP() + 1 * getType());
+                if (getCurrHP()>getStamina())
+                    setCurrHP(getStamina());
+            cout << getName() << " heals for " << 1 * getType() << " HP" <<" now has " << getCurrHP() << " HP" <<  endl;
         }
         return (hero->getCurrHP()>0) ? true : false;
     }
 }
 }
-

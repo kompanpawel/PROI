@@ -14,3 +14,17 @@ std::ostream& operator<<( std::ostream& out, const Monster& g )
     return out;
 }
 
+void Monster::restore()
+{
+    setCurrHP(getStamina());
+}
+
+void Monster::setAllStats()
+{
+    setStamina(getStamina());
+    setCurrHP(getStamina());
+    setAttack(getAttack());
+    setDefence(getDefence());
+    setDamage(getDamage());
+    setArmor(getArmor());
+}

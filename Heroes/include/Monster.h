@@ -59,7 +59,12 @@ public:
     {
 
     }
+    virtual ~Monster()
+        {
+
+        }
     void dmg (int dmg) {currHP -= dmg;} /**amount of damage taken by hero or monster*/
+    void restore();
     virtual bool fight(Hero *hero) = 0;
 
     void setName(std::string name_) {name = name_;}
@@ -80,7 +85,7 @@ public:
     int getModifier() const {return modifier;}
     void setType(int type_) {type=type_;}
     int getType() const {return type;}
-
+    void setAllStats();
     private:
 };
 

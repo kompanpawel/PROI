@@ -14,12 +14,6 @@ void stopScreen()
 int main()
 {
     srand(time(0));
-    char choice;
-    cout << "1.Test\n2.Main menu.\n";
-    cin >> choice;
-    switch(choice)
-    {
-        case '2': menu::showMenu(); break;
-    }
+    menu::showMenu();
 return 0;
 }
