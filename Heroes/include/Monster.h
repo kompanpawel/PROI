@@ -14,7 +14,7 @@ class Monster
     int attack, defence;
     int damage, armor;
     int modifier; /*every rest makes monsters stronger*/
-    int type; /**1 for easy, 10 for medium, 100 for hard and 1000 for bosses*/
+    int type; /*1 for easy, 10 for medium, 100 for hard and 1000 for bosses*/
 
 public:
     Monster() /**default constructor*/
@@ -63,7 +63,7 @@ public:
         {
 
         }
-    void dmg (int dmg) {currHP -= dmg;} /**amount of damage taken by hero or monster*/
+    void dmg (int dmg) /**amount of damage taken by hero or monster*/ {currHP -= dmg;}
     void restore();
     virtual bool fight(Hero *hero) = 0;
 

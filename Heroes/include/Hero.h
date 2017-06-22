@@ -17,7 +17,7 @@ class Hero
    Armor armor;
    int attack;
    int defence;
-   static string DIFFICULTY; /**zmiana trybu gry*/
+   static string DIFFICULTY; //zmiana trybu gry
 
 public:
 
@@ -58,7 +58,7 @@ public:
             startingStats();
             confAttack();
         }
-    Hero(std::string name, std::string class_of_hero, int strength, int agility, int intelligence,int currHP, int stamina, Weapon weapon, Armor armor,int level, int attack, int defence)/**main constructor*/
+    Hero(std::string name, std::string class_of_hero, int strength, int agility, int intelligence,int currHP, int stamina, Weapon weapon, Armor armor,int level, int attack, int defence)/**constructor for loading*/
     :
         name{name},
         class_of_hero{class_of_hero},
@@ -79,14 +79,14 @@ public:
         }
     bool fight(Monster *monster); /**fight with monsters*/
 
-    void dmg(int dmg) {currHP -= dmg;} /**amount of damage taken by hero or monster*/
+    void dmg(int dmg) /**amount of damage taken by hero or monster*/{currHP -= dmg;}
     int licznik=0; /**modifier of monsters level*/
     void restore(); /**restoring hero HP*/
     void levelUp(); /**leveling up your hero*/
     void startingStats(); /**starting statistics of your hero*/
     string to_string();
 
-    static void setDifficulty (string change) {DIFFICULTY = change;} /**difficulty of game*/
+    static void setDifficulty (string change) /**difficulty of game*/ {DIFFICULTY = change;}
 
     void setName (std::string name_) {name = name_;}
     std::string getName() const {return name;}

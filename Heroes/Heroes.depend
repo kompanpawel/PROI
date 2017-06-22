@@ -82,7 +82,7 @@
 	<vector>
 	"Monster.h"
 
-1496760256 c:\users\kompanpawel\desktop\proi\heroes\include\hero.h
+1496942847 c:\users\kompanpawel\desktop\proi\heroes\include\hero.h
 	<iostream>
 	<string>
 	"Equipment.h"
@@ -92,7 +92,7 @@
 	<iostream>
 	<string>
 
-1496772327 c:\users\kompanpawel\desktop\proi\heroes\include\monster.h
+1496942513 c:\users\kompanpawel\desktop\proi\heroes\include\monster.h
 	<iostream>
 	<string>
 	"Hero.h"
@@ -111,7 +111,7 @@
 	"Hero.h"
 	"Equipment.h"
 
-1496772391 source:c:\users\kompanpawel\desktop\proi\heroes\src\menu.cpp
+1496940421 source:c:\users\kompanpawel\desktop\proi\heroes\src\menu.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -184,7 +184,7 @@
 	<iostream>
 	"Hero.h"
 
-1496710224 source:c:\users\kompanpawel\desktop\proi\heroes\src\watermonster.cpp
+1496773078 source:c:\users\kompanpawel\desktop\proi\heroes\src\watermonster.cpp
 	"WaterMonster.h"
 	<iostream>
 	<string>

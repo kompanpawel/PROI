@@ -166,16 +166,16 @@ void menu::pickMonster()
                 hard_monsters[chosen]->setModifier(hero->licznik);
                 hard_monsters[chosen]->setAllStats();
                 bool result = hero->fight(hard_monsters[chosen]);
-                 if(result)
-                 {
+                if(result)
+                {
                     hero->levelUp();
                     cout << hero->getName()<< " wins\n";
                 }
                 else
-                    {
-                        delete hero;
-                        hero = nullptr;
-                    }
+                {
+                    delete hero;
+                    hero = nullptr;
+                }
                 break;
             }
         case '4':
@@ -190,10 +190,10 @@ void menu::pickMonster()
                     cout << hero->getName()<< " wins\n";
                 }
                 else
-                    {
-                        delete hero;
-                        hero = nullptr;
-                    }
+                {
+                    delete hero;
+                    hero = nullptr;
+                }
                  break;
             }
     }
@@ -257,7 +257,7 @@ void menu::createMonsters()
 {
     EarthMonster *easy_earth = new EarthMonster("Kobold",10,10,13,6,6,0,1);
     FireMonster *easy_fire = new FireMonster("Fire Serpent",10,10,13,6,6,0,1);
-    WaterMonster *easy_water = new WaterMonster("a",10,10,13,6,6,0,1);
+    WaterMonster *easy_water = new WaterMonster("Murloc",10,10,13,6,6,0,1);
     AirMonster *easy_air = new AirMonster("Small Vortex",10,10,13,6,6,0,1);
     easy_monsters.push_back(easy_earth);
     easy_monsters.push_back(easy_fire);
@@ -265,27 +265,27 @@ void menu::createMonsters()
     easy_monsters.push_back(easy_air);
 
     EarthMonster *medium_earth = new EarthMonster("Golem",30,15,25,15,16,0,5);
-    FireMonster *medium_fire = new FireMonster("Golem",30,15,25,15,16,0,5);
-    WaterMonster *medium_water = new WaterMonster("Golem",30,15,25,15,16,0,5);
-    AirMonster *medium_air = new AirMonster("Golem",30,15,25,15,16,0,5);
+    FireMonster *medium_fire = new FireMonster("Magmotron",30,15,25,15,16,0,5);
+    WaterMonster *medium_water = new WaterMonster("Shark",30,15,25,15,16,0,5);
+    AirMonster *medium_air = new AirMonster("Ghost",30,15,25,15,16,0,5);
     medium_monsters.push_back(medium_earth);
     medium_monsters.push_back(medium_fire);
     medium_monsters.push_back(medium_water);
     medium_monsters.push_back(medium_air);
 
     EarthMonster *hard_earth = new EarthMonster("Wyvern",45,20,25,20,20,0,10);
-    FireMonster *hard_fire = new FireMonster("Wyvern",45,20,25,20,20,0,10);
-    WaterMonster *hard_water = new WaterMonster("Wyvern",45,20,25,20,20,0,10);
-    AirMonster *hard_air = new AirMonster("Wyvern",45,20,25,20,20,0,10);
+    FireMonster *hard_fire = new FireMonster("Phoenix",45,20,25,20,20,0,10);
+    WaterMonster *hard_water = new WaterMonster("Giant Sea Serpent",45,20,25,20,20,0,10);
+    AirMonster *hard_air = new AirMonster("Air Collosus",45,20,25,20,20,0,10);
     hard_monsters.push_back(hard_earth);
     hard_monsters.push_back(hard_fire);
     hard_monsters.push_back(hard_water);
     hard_monsters.push_back(hard_air);
 
-    EarthMonster *earth_boss = new EarthMonster("Golden Dragon",80,30,30,28,30,0,20);
-    FireMonster *fire_boss = new FireMonster("Golden Dragon",80,30,30,28,30,0,20);
-    WaterMonster *water_boss = new WaterMonster("Golden Dragon",80,30,30,28,30,0,20);
-    AirMonster *air_boss = new AirMonster("Golden Dragon",80,30,30,28,30,0,20);
+    EarthMonster *earth_boss = new EarthMonster("Behemoth",80,30,30,28,30,0,20);
+    FireMonster *fire_boss = new FireMonster("Deathwing",80,30,30,28,30,0,20);
+    WaterMonster *water_boss = new WaterMonster("Kraken",80,30,30,28,30,0,20);
+    AirMonster *air_boss = new AirMonster("Phantom Dragon",80,30,30,28,30,0,20);
     bossses.push_back(earth_boss);
     bossses.push_back(fire_boss);
     bossses.push_back(water_boss);

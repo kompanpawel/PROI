@@ -16,17 +16,17 @@ class menu
     static vector <Monster*> hard_monsters;
     static vector <Monster*> bossses;
 
-   static void cleanScreen()
-   {
-       system("cls");
-   }
-   static void stopScreen()
-   {
-       std::cout << "\nType any character to continue " << endl;
-       std::cin.clear();
-       std::cin.ignore();
-       std::cin.get();
-   }
+    static void cleanScreen()
+    {
+        system("cls");
+    }
+    static void stopScreen()
+    {
+        std::cout << "\nType any character to continue " << endl;
+        std::cin.clear();
+        std::cin.ignore();
+        std::cin.get();
+    }
 public:
     Menu() = delete;
     static int showMenu();

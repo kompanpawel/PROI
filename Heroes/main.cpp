@@ -15,5 +15,5 @@ int main()
 {
     srand(time(0));
     menu::showMenu();
-return 0;
+    return 0;
 }

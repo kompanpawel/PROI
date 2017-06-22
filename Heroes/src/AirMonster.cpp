@@ -24,7 +24,7 @@ int init = rand()%2;
                     int dodge_chance = rand() %101;
                     if (dmg_dealt<1)
                         dmg_dealt=0;
-                    if (dodge_chance < 2*getType()+1)
+                    if (dodge_chance < 3*getType()+1)
                     {
                         dmg_dealt = 0;
                         cout << getName() << " dodged attack." << endl;
@@ -70,7 +70,7 @@ int init = rand()%2;
                 int dodge_chance = rand() %101;
                 if (dmg_dealt<1)
                     dmg_dealt=0;
-                if (dodge_chance < 2*getType()+1)
+                if (dodge_chance < 3*getType()+1)
                 {
                     dmg_dealt = 0;
                     cout << getName() << " dodged attack." << endl;
